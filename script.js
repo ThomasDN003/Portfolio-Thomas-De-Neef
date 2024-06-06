@@ -18,17 +18,30 @@ function itemToevoegen(ingegevenItem) {
     document.getElementById("ingegevenItem").value = "";
     itemWeergeven();
 
-}   
-
-
-
+} 
+  
 function itemWeergeven(ingegevenItem) {
     lijstWeergeven.innerHTML = "";
     for (let i = 0; i < boodschappenlijst.length; i++) {
-        lijstWeergeven.innerHTML+= `<li class = "lijstweergeven"><p>${boodschappenlijst[i]} <button data-index="${i}>X</button></p></li>`
-        
+        lijstWeergeven.innerHTML+= `<li class = "lijstweergeven"><p>${boodschappenlijst[i]} <button class="verwijderItem" itemPlaats="${i}">X</button></p></li>`
+        console.log("plaats" + i);
     }
+    document.querySelectorAll(".verwijderItem").forEach((button) => {
+        button.addEventListener("click", function () {
+            const plaats = this.getAttribute("itemPlaats");
+            console.log("plaats" + plaats);
+            boodschappenlijst.splice(plaats, 1);
+            localStorage.setItem('boodschapKey', JSON.stringify(boodschappenlijst));
+            itemWeergeven();
+            });
+    });
 }
+
+
+
+
+
+
 
 
 // function deleteItem(boodschappenlijst[itemToevoegen]) {

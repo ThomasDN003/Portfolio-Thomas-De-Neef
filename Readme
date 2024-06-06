@@ -13,3 +13,7 @@ js
     https://stackoverflow.com/questions/51303211/how-to-add-item-to-local-storage
     https://blog.logrocket.com/localstorage-javascript-complete-guide/
     https://chatgpt.com/share/b5191671-29e8-4406-8bbb-a7c5b695bee6
+    https://www.w3schools.com/jsref/met_storage_removeitem.asp
+    https://stackoverflow.com/questions/45911649/how-can-i-remove-data-by-index-array-which-is-stored-in-local-storage
+    https://stackoverflow.com/questions/38748298/remove-array-item-from-localstorage
+    https://www.freecodecamp.org/news/how-to-remove-an-element-from-a-javascript-array-removing-a-specific-item-in-js/#:~:text=You%20can%20remove%20the%20element,of%20the%20element%20to%20remove.&text=The%20splice%20method%20can%20accept%20many%20arguments.
