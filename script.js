@@ -1,5 +1,9 @@
 document.title = "Boodschappenlijst";
 
+let boodschappenlijst = JSON.parse(localStorage.getItem("boodschapKey")) || [];
+
+
+
 // //validatie van formulier
 // toevoegKnop.addEventListener("click", itemToevoegen);
 
@@ -11,12 +15,12 @@ form.addEventListener("submit", function(event) {
 });
 
 function itemToevoegen(ingegevenItem) {
-    for (let index = 0; index < array.length; index++) {
-        const element = array[index];
-        
-    }
-    localStorage.setItem("boodschapKey", ingegevenItem);
+    boodschappenlijst.push(ingegevenItem.trim());
+    localStorage.setItem("boodschapKey", JSON.stringify(boodschappenlijst));
+    document.getElementById("ingegevenItem").value = "";
 }
+
+
 
 
 //opgelsagen lijstje terug halen uit local storage
