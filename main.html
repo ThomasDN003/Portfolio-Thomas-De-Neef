@@ -10,12 +10,13 @@
     <div class="toevoegen">
         <h1 class="titel">Boodschappen</h1>
         <form class="itemToevoegen" id="itemToevoegen">
-            <input class="item" id="item" placeholder="Voorwerp">
-            <input type="number"  class="hoeveelheid" id="hoeveelheid" min="1" max="100">
-            <button type="submit" class="toevoegKnop" id="toevoegKnop">Toevoegen</button>
+            <input class="ingegevenItem" id="ingegevenItem" placeholder="Voorwerp">
+            <button onclick="itemToevoegen(ingegevenItem)" type="submit" class="toevoegKnop" id="toevoegKnop">Toevoegen</button>
         </form>
         <ul id="boodschappenlijst"></ul>
         <script src="script.js"></script>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
