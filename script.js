@@ -4,7 +4,10 @@ let boodschappenlijst = JSON.parse(localStorage.getItem("boodschpenapKey")) || [
 const lijstWeergeven = document.getElementById("boodschappenlijstWeergeven");
 console.log(boodschappenlijst);
 
-itemWeergeven(); 
+(function(){
+    itemWeergeven(); 
+})();
+
 
 const form = document.getElementById("itemToevoegen");
 form.addEventListener("submit", function (event) {
@@ -24,9 +27,9 @@ function itemToevoegen(ingegevenItem, ingegevenHoeveelheid) {
 
 function itemWeergeven(ingegevenItem, ingegevenHoeveelheid) {
     lijstWeergeven.innerHTML = "";
-    for (let i = 0; i < boodschappenlijst.lengp; i++) {
+    for (let i = 0; i < boodschappenlijst.length; i++) {
         lijstWeergeven.innerHTML += `<li class="lijstweergeven">
-        <p>${boodschappenlijst[i].item} (${boodschappenlijst[i].hoeveelheid}) 
+        <p>${boodschappenlijst[i].item} ${boodschappenlijst[i].hoeveelheid} 
         <button class="verwijderItem" itemPlaats="${i}">X</button></p></li>`;        
         console.log("plaats" + i);
     }
@@ -40,4 +43,5 @@ function itemWeergeven(ingegevenItem, ingegevenHoeveelheid) {
         });
     });
 }
+
 
