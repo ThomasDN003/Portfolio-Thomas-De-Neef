@@ -11,6 +11,11 @@ body{
     width: 400px;
     text-align: center;
     margin: 25px;
+    
+}
+
+.toevoegKnop{
+    cursor: pointer;
 }
 
 .titel{
@@ -19,9 +24,15 @@ body{
 
 .itemToevoegen{
     margin: 20px;
+    cursor: pointer;
 }
 
 .ingegevenHoeveelheid{
     width: 40px;
 }
 
+.verwijderItem {
+    padding: 5px 10px;
+    cursor: pointer;
+
+}

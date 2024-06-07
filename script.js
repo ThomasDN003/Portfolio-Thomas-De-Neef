@@ -1,6 +1,6 @@
 document.title = "Boodschappenlijst";
 
-let boodschappenlijst = JSON.parse(localStorage.getItem("boodschpenapKey")) || [];
+let boodschappenlijst = JSON.parse(localStorage.getItem("boodschappenKey")) || [];
 const lijstWeergeven = document.getElementById("boodschappenlijstWeergeven");
 console.log(boodschappenlijst);
 
@@ -28,20 +28,24 @@ function itemToevoegen(ingegevenItem, ingegevenHoeveelheid) {
 function itemWeergeven(ingegevenItem, ingegevenHoeveelheid) {
     lijstWeergeven.innerHTML = "";
     for (let i = 0; i < boodschappenlijst.length; i++) {
+        const {item, hoeveelheid} = boodschappenlijst[i];
         lijstWeergeven.innerHTML += `<li class="lijstweergeven">
-        <p>${boodschappenlijst[i].item} ${boodschappenlijst[i].hoeveelheid} 
+        <p>${item} ${hoeveelheid} 
         <button class="verwijderItem" itemPlaats="${i}">X</button></p></li>`;        
         console.log("plaats" + i);
     }
+
     document.querySelectorAll(".verwijderItem").forEach((button) => {
         button.addEventListener("click", function () {
-            const plaats = pis.getAttribute("itemPlaats");
+            const plaats = this.getAttribute("itemPlaats");
             console.log("plaats" + plaats);
-            boodschappenlijst.splice(plaats, 1);
-            localStorage.setItem('boodschappenKey', JSON.stringify(boodschappenlijst));
-            itemWeergeven();
+            const schrappen = this.parentElement.parentElement;
+            schrappen.style.textDecoration = "line-through"
+            setTimeout(() =>{
+                boodschappenlijst.splice(plaats, 1);
+                localStorage.setItem('boodschappenKey', JSON.stringify(boodschappenlijst));
+                itemWeergeven();
+            },500)
         });
     });
 }
-
-
