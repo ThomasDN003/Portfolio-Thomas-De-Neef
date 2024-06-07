@@ -10,11 +10,15 @@
     <div class="toevoegen">
         <h1 class="titel">Boodschappen</h1>
         <form class="itemToevoegen" id="itemToevoegen">
-            <input class="ingegevenItem" id="ingegevenItem" placeholder="Voorwerp">
+            <input class="ingegevenItem" id="ingegevenItem" placeholder="Voorwerp" required>
+            <input type="number" name="ingegevenHoeveelheid" id="ingegevenHoeveelheid" class="ingegevenHoeveelheid" required>
             <button onclick="itemToevoegen(ingegevenItem)" type="submit" class="toevoegKnop" id="toevoegKnop">Toevoegen</button>
         </form>
         <ul id="boodschappenlijstWeergeven"></ul>
         <script src="script.js"></script>
+        <hr>
+        <p>Totaal: </p>
+        <p id="totaalWeergeveb"></p>
     </div>
 
     <script src="script.js"></script>
