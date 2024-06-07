@@ -8,7 +8,6 @@ console.log(boodschappenlijst);
     itemWeergeven(); 
 })();
 
-
 const form = document.getElementById("itemToevoegen");
 form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -18,6 +17,7 @@ form.addEventListener("submit", function (event) {
 });
 
 function itemToevoegen(ingegevenItem, ingegevenHoeveelheid) {
+    
     boodschappenlijst.push({ item: ingegevenItem.trim(), hoeveelheid: ingegevenHoeveelheid });
     localStorage.setItem("boodschappenKey", JSON.stringify(boodschappenlijst));
     document.getElementById("ingegevenItem").value = "";
@@ -48,4 +48,6 @@ function itemWeergeven(ingegevenItem, ingegevenHoeveelheid) {
             },500)
         });
     });
+
+    
 }

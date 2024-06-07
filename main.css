@@ -4,13 +4,16 @@ body{
     justify-content: center;
 }
 
-.toevoegen{
+
+
+.lijst{
     background-color: #eeeedd;
     border-radius: 7.5px;
     box-shadow: 0px 0px 8px 1px;
     width: 400px;
     text-align: center;
     margin: 25px;
+    display: flexbox;
     
 }
 
